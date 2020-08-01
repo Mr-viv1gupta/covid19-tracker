@@ -31,12 +31,33 @@ block content
                                 .total
                                     h4 Total Recovered
                                     .count  #{data.Global.TotalRecovered}
-    .centered
+    .centered#countryList
         h2 By Country
+        h3 Type to Filter
+            form(onSubmit="handleSubmit(event)")
+                input#needle(placeholder="Country name", onkeyup="handleKeyup(event)")
+            // This JavaScript will run in the Web browser.
+            script(type="text/javascript").
+                filter = (needle) => {
+                    const cards = document.querySelectorAll('#countryList .card');
+                    cards.forEach(el => {
+                        const name = el.getAttribute('data-name').toLowerCase();
+                        const isMatched = name && name.indexOf(needle) !== -1;
+                        el.style.display = isMatched ? 'block' : 'none';
+                    });
+                }
+                handleSubmit = (e) => {
+                    e.preventDefault(); // Prevent the form from reloading the page. We're handling this with JavaScript.
+                };
+                handleKeyup = (e) => {
+                    // Filter whenever content is entered.
+                    const needle = e.target.value.toLowerCase(); // Get the filter value.
+                    filter(needle);
+                };
         .cards
             // Our Countries array is now at data.Countries.
             each val, index in data.Countries
-                .card
+                .card(data-name=val.Country.toLowerCase())
                     h2 #{val.Country}
                     i As of #{val.Date.split('T')[0]}
                     .row
