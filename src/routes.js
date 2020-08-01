@@ -1,8 +1,10 @@
 const router = require('express').Router();
+const pug = require('pug');
 
 // Home page route.
 router.get('/', (req, res) => {
-    res.send('Hello World. Learn <a href="/about">about this app</a>');
+    res.render('home');
+    // res.send('Hello World. Learn <a href="/about">about this app</a>');
 });
 
 // About page route

@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes');
-const { route } = require('./routes');
+const routes = require('./src/routes');
+// const pug = require('pug');
 const PORT = 3000;
+
+app.set('view engine', 'pug');
 
 // route calls 
 app.use(`/`, routes);
