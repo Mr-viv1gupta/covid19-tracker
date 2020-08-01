@@ -1,0 +1,27 @@
+{
+  "name": "covid19-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-viv1gupta/covid19-tracker.git"
+  },
+  "keywords": [],
+  "author": "Vivek Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-viv1gupta/covid19-tracker/issues"
+  },
+  "homepage": "https://github.com/Mr-viv1gupta/covid19-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
