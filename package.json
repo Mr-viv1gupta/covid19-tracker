@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Mr-viv1gupta/covid19-tracker#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "pug": "^3.0.0"
   },
